@@ -1,6 +1,3 @@
-
-
-
 document.addEventListener('DOMContentLoaded', () => {
     const mainText = document.getElementById('main-text');
     const yesButton = document.getElementById('yes-button');
@@ -9,15 +6,14 @@ document.addEventListener('DOMContentLoaded', () => {
     let clickCount = 0;
     const messages = ["poda pota", "en daw venna", "Please da yes sollu","en ivalo attitude","u know i like u","Please daw", ];
 
-
     function getRandomPosition() {
-        const offset = 300; 
+        const offset = 300; // Maximum distance the button can move in any direction
         const x = Math.random() * offset - offset / 2;
         const y = Math.random() * offset - offset / 2;
         return { x, y };
     }
-    
-    noButton.addEventListener('mouseover', () => {
+
+    function handleMovement() {
         if (hoverCount < 7) {
             const { x, y } = getRandomPosition();
             noButton.style.transform = `translate(${x}px, ${y}px)`;
@@ -25,8 +21,10 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             noButton.style.transform = 'translate(0, 0)';
         }
-    });
-    
+    }
+
+    noButton.addEventListener('mouseover', handleMovement);
+    noButton.addEventListener('touchstart', handleMovement);
 
     noButton.addEventListener('click', () => {
         if (hoverCount >= 7) {
