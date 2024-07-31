@@ -7,7 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const noButton = document.getElementById('no-button');
     let hoverCount = 0;
     let clickCount = 0;
-    const messages = ["poda pota", "en daw venna", "pls da yes sollu"];
+    const messages = ["poda pota", "en daw venna", "Please da yes sollu","en ivalo attitude","u know i like u","Please daw", ];
+
 
     function getRandomPosition() {
         const offset = 300; 
